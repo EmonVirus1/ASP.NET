@@ -1,0 +1,24 @@
+﻿@model List<Lab_Task_1.Models.Entity.product>
+@{
+    ViewBag.Title = "Products";
+}
+
+<h2>List of all products are given below:</h2>
+<form action="ShowSelection" method="get">
+    <table class="table table-bordered">
+        <tr>
+            <td>Product Name</td>
+            <td>Price</td>
+            <td>Add to cart</td>
+        </tr>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.name</td>
+                <td>@i.price</td>
+                <td><a href='add_to_cart?item=@i.name&price=@i.price'>ADD</a></td>
+            </tr>
+        }
+        <tr><td colspan="3" align="center"><input type="submit" name="checkout" value="Check Out" style="border:none;background-color:green;text-align:center;color:white;"></td></tr>
+    </table>
+</form>

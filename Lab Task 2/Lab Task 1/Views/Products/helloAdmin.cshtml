@@ -1,0 +1,23 @@
+﻿@model List<Lab_Task_1.Models.Entity.order>
+@{
+    ViewBag.Title = "Hello Admin";
+}
+
+<h2>helloAdmin</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Order no.</th><th>Product name</th><th>Price</th><th>Customer id</th><th>Status</th><th>Options</th>
+    </tr>
+    @foreach(var i in Model)
+    {
+        <tr>
+            <th>@i.id</th>
+            <th>@i.name</th>
+            <th>@i.price</th>
+            <th>@i.cid</th>
+            <th>@i.status</th>
+            <th><a href="processProduct?id=@i.id">Process</a>&nbsp/&nbsp<a href="cancelProduct?id=@i.id">Cancel</a></th>
+        </tr>
+    }
+</table>

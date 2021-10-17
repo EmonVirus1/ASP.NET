@@ -1,0 +1,19 @@
+﻿@model List<Lab_Task_1.Models.Entity.product>
+@{
+    ViewBag.Title = "ShowSelection";
+}
+
+<form action="confirm_order">
+<table class="table table-bordered">
+    <tr>
+        <td>Item</td><td>Price</td>
+    </tr>
+    @foreach(var i in Model)
+    {
+        <tr>
+            <td>@i.name</td><td>@i.price</td>
+        </tr>
+    }
+    <tr><td colspan="2" align="center"><input type="submit" value="Confirm Order" style="border:none;background-color:red;color:white;"></td></tr>
+</table>
+</form>
